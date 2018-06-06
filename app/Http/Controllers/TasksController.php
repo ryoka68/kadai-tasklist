@@ -84,6 +84,7 @@ class TasksController extends Controller
 
         return view('tasks.edit', [
             'task' => $task,
+            
         ]);
     }
 
@@ -103,8 +104,9 @@ class TasksController extends Controller
 
 
         $task = Task::find($id);
-        $task->title = $request->title;    // add
+        
         $task->content = $request->content;
+         $task->status = $request->status;
         $task->save();
 
 
